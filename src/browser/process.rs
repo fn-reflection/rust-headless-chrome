@@ -128,6 +128,7 @@ static DEFAULT_ARGS: [&str; 23] = [
     "--disable-dev-shm-usage",
     "--disable-extensions",
     // BlinkGenPropertyTrees disabled due to crbug.com/937609
+    // TranslateUI→Translatehttps://github.com/GoogleChrome/lighthouse/discussions/11860
     "--disable-features=Translate,BlinkGenPropertyTrees",
     "--disable-hang-monitor",
     "--disable-ipc-flooding-protection",
