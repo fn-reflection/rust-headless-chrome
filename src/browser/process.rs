@@ -116,7 +116,7 @@ impl<'a> LaunchOptions<'a> {
 
 /// These are passed to the Chrome binary by default.
 /// Via https://github.com/GoogleChrome/puppeteer/blob/master/lib/Launcher.js#L38
-static DEFAULT_ARGS: [&str; 23] = [
+static DEFAULT_ARGS: [&str; 24] = [
     "--disable-background-networking",
     "--enable-features=NetworkService,NetworkServiceInProcess",
     "--disable-background-timer-throttling",
@@ -129,6 +129,8 @@ static DEFAULT_ARGS: [&str; 23] = [
     "--disable-extensions",
     // BlinkGenPropertyTrees disabled due to crbug.com/937609
     // TranslateUI→Translatehttps://github.com/GoogleChrome/lighthouse/discussions/11860
+    // 任意のポートアクセス許容、ヘッドレスの有効、productionでは非推奨
+    "--remote-debugging-address=0.0.0.0",
     "--disable-features=Translate,BlinkGenPropertyTrees",
     "--disable-hang-monitor",
     "--disable-ipc-flooding-protection",
