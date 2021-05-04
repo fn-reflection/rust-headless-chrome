@@ -327,7 +327,7 @@ impl Process {
     }
 }
 
-fn get_available_port() -> Option<u16> {
+pub fn get_available_port() -> Option<u16> {
     let mut ports: Vec<u16> = (8000..9000).collect();
     ports.shuffle(&mut thread_rng());
     ports.iter().find(|port| port_is_available(**port)).cloned()

@@ -9,7 +9,7 @@ use log::*;
 use serde;
 
 use process::Process;
-pub use process::{LaunchOptions, LaunchOptionsBuilder};
+pub use process::{get_available_port, LaunchOptions, LaunchOptionsBuilder};
 pub use tab::Tab;
 pub use transport::ConnectionClosed;
 use transport::Transport;
