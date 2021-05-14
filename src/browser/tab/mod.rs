@@ -208,6 +208,7 @@ impl<'a> Tab {
 
         thread::spawn(move || {
             for event in incoming_events_rx {
+                info!("{:?}", event);
                 let listeners = listeners_mutex.lock().unwrap();
                 listeners.iter().for_each(|listener| {
                     listener.on_event(&event);
